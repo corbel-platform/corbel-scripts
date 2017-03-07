@@ -1,6 +1,6 @@
 //Create iam scopes
 
-iam.createScope('iam:user:me','http://iam.corbel.io', [	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE", "POST" ], 	"type" : "http_access", 	"uri" : "user/me((/identity)|(/signout)|(/disconnect))?/?", tokenType: "user"])
+iam.createScope('iam:user:me','http://iam.corbel.io', [	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE", "POST" ], 	"type" : "http_access", 	"uri" : "user/me((/identity)|(/signout)|(/validateEmail)|(/disconnect))?/?", tokenType: "user"])
 
 iam.createScope('iam:user:create','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "POST" ],  	"type" : "http_access", 	"uri" : 'user/?' ] )
 
@@ -14,12 +14,13 @@ iam.createScope('iam:user:resetpassword','http://iam.corbel.io', [	mediaTypes : 
 
 iam.createScope('iam:user:device','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'user/me/devices(/.*)?' ] )
 
+iam.createScope('iam:user:email:confirmation','http://iam.corbel.io', [	mediaTypes : [ 	"application/json" ], 	"methods" : [ "PUT" ], 	"type" : "http_access", 	"uri" : "user/emailConfirmation", tokenType: "user"])
 
 //Admin
 
 iam.createScope('iam:user:delete','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ 	"DELETE" ], 	"type" : "http_access", 	"uri" : '(?!user/me$)user/.*' ] )
 
-iam.createScope('iam:user:read','http://iam.corbel.io', [	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET" ], 	"type" : "http_access", "uri" : '(?!user/me$)(?!user/me/(identity|profile)$)user(/\\w+(/(identity|profile))?)?/?' ])
+iam.createScope('iam:user:read','http://iam.corbel.io', [	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET" ], 	"type" : "http_access", "uri" : '(?!user/me$)(?!user/me/(identity|validateEmail|profile)$)user(/\\w+(/(identity|validateEmail|profile))?)?/?' ])
 
 iam.createScope('iam:user:edit','http://iam.corbel.io', 	[	mediaTypes : [ 	"application/json" ], 	"methods" : [ "PUT" ], 	"type" : "http_access", "uri" : 'user/\\w+' ])
 
