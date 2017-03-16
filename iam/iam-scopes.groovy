@@ -30,10 +30,14 @@ iam.createScope('iam:user:disconnect:admin','http://iam.corbel.io', [ 	mediaType
 
 iam.createScope('iam:user:device:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'user/\\w+/devices(/.*)?' ] )
 
+iam.createScope('iam:group:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "POST", "DELETE" ],  	"type" : "http_access", 	"uri" : 'group(/.*)?' ] )
+
+iam.createScope('iam:user:group:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'user/\\w+/group(/.*)?' ] )
+
 
 //Root
-
 
 iam.createScope('iam:domain:root','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "POST", "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'domain(/[\\w\\-:@.]+)?/?' ] )
 iam.createScope('iam:client:root','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "POST", "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'domain(/[\\w\\-:@.]+)/client(/[\\w\\-@.]+)?/?' ])
 iam.createScope('iam:scope:root', 'http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "POST", "GET",        "DELETE" ],  	"type" : "http_access", 	"uri" : 'scope(/[\\w\\-:@.]+)?/?' ] )
+iam.createScope('iam:group:root', 'http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "POST", "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'group(/[\\w\\-:@.]+)?/?' ] )
