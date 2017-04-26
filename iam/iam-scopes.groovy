@@ -22,7 +22,7 @@ iam.createScope('iam:user:delete','http://iam.corbel.io', [ 	mediaTypes : [ 	"ap
 
 iam.createScope('iam:user:read','http://iam.corbel.io', [	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET" ], 	"type" : "http_access", "uri" : '(?!user/me$)(?!user/me/(identity|validateEmail|profile)$)user(/\\w+(/(identity|validateEmail|profile))?)?/?' ])
 
-iam.createScope('iam:user:edit','http://iam.corbel.io', 	[	mediaTypes : [ 	"application/json" ], 	"methods" : [ "PUT" ], 	"type" : "http_access", "uri" : 'user/\\w+' ])
+iam.createScope('iam:user:edit','http://iam.corbel.io', 	[	mediaTypes : [ 	"application/json" ], 	"methods" : [ "PUT" ], 	"type" : "http_access", "uri" : 'user/(\\w|-)+' ])
 
 iam.createScope('iam:identity:admin','http://iam.corbel.io',[	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "POST" ], 	"type" : "http_access", "uri" : 'user/\\w+/identity' ])
 
