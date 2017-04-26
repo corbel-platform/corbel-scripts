@@ -32,7 +32,7 @@ iam.createScope('iam:user:device:admin','http://iam.corbel.io', [ 	mediaTypes : 
 
 iam.createScope('iam:group:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "POST", "DELETE" ],  	"type" : "http_access", 	"uri" : 'group(/.*)?' ] )
 
-iam.createScope('iam:user:group:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'user/\\w+/group(/.*)?' ] )
+iam.createScope('iam:user:group:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'user/(\\w|-)+/group(/.*)?' ] )
 
 
 //Root
