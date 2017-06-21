@@ -12,7 +12,7 @@ iam.createScope('iam:user:profile','http://iam.corbel.io', [	mediaTypes : [ 	"ap
 
 iam.createScope('iam:user:resetpassword','http://iam.corbel.io', [	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET" ], 	"type" : "http_access", 	"uri" : "user/resetPassword"])
 
-iam.createScope('iam:user:device','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'user/me/devices(/.*)?' ] )
+iam.createScope('iam:user:device','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'user/me/device(/.*)?' ] )
 
 iam.createScope('iam:user:email:confirmation','http://iam.corbel.io', [	mediaTypes : [ 	"application/json" ], 	"methods" : [ "PUT" ], 	"type" : "http_access", 	"uri" : "user/emailConfirmation", tokenType: "user"])
 
@@ -28,7 +28,7 @@ iam.createScope('iam:identity:admin','http://iam.corbel.io',[	mediaTypes : [ 	"a
 
 iam.createScope('iam:user:disconnect:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "PUT" ],  	"type" : "http_access", 	"uri" : '(?!user/me/disconnect$)user/\\w+/disconnect' ] )
 
-iam.createScope('iam:user:device:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'user/\\w+/devices(/.*)?' ] )
+iam.createScope('iam:user:device:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "DELETE" ],  	"type" : "http_access", 	"uri" : 'user/\\w+/device(/.*)?' ] )
 
 iam.createScope('iam:group:admin','http://iam.corbel.io', [ 	mediaTypes : [ 	"application/json" ], 	"methods" : [ "GET", "PUT", "POST", "DELETE" ],  	"type" : "http_access", 	"uri" : 'group(/.*)?' ] )
 
